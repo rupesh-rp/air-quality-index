@@ -8,7 +8,7 @@ import { mergeAQIData } from './actions';
 
 function createChannel() {
   return eventChannel(emitter => {
-    const client = new W3CWebSocket('ws://city-ws.herokuapp.com');
+    const client = new W3CWebSocket('wss://city-ws.herokuapp.com');
     client.onmessage = message => {
       const data = JSON.parse(message.data);
       emitter(data);
