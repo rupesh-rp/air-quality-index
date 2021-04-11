@@ -26,7 +26,7 @@ const Chart = ({ data }) => (
       </XAxis>
       <YAxis>
         <Label
-          value="Aiq Quality Index"
+          value="Air Quality Index"
           position="left"
           angle={-90}
           style={{ textAnchor: 'middle' }}
