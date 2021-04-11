@@ -42,6 +42,14 @@ const Content = styled.div`
   }
 `;
 
+const PromptText = styled.div`
+  text-align: center;
+  @media (max-width: 960px) {
+    padding-top: 20px;
+    text-align: left
+  }
+`;
+
 const getCellProps = (cellInfo, selectedRow) => {
   let backgroundColor;
   if (cellInfo.column.id === 'city' && cellInfo.value === selectedRow) {
@@ -144,8 +152,10 @@ const HomePage = ({ airQualityStats, recentAirQualityStats }) => {
           </TableContainer>
         </Paper>
         <ChartContainer>
-          {selectedRow && (
+          {selectedRow ? (
             <Chart data={preProcessChartData(airQualityStats[selectedRow])} />
+          ) : (
+            <PromptText>Click on any city to view its graph</PromptText>
           )}
         </ChartContainer>
       </Content>
