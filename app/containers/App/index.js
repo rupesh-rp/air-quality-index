@@ -12,10 +12,16 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import { useInjectSaga } from 'utils/injectSaga';
+import saga from './saga';
 
 import GlobalStyle from '../../global-styles';
 
-export default function App() {
+const key = 'app';
+
+const App = () => {
+  useInjectSaga({ key, saga });
+
   return (
     <div>
       <Switch>
@@ -25,4 +31,6 @@ export default function App() {
       <GlobalStyle />
     </div>
   );
-}
+};
+
+export default App;

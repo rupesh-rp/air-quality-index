@@ -8,3 +8,5 @@
  * Follow this format:
  * export const YOUR_ACTION_CONSTANT = 'yourproject/YourContainer/YOUR_ACTION_CONSTANT';
  */
+
+export const MERGE_AQI_DATA = 'air-quality-index/App/MERGE_AQI_DATA';
